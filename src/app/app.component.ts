@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  userName = "Joaquim";//irei compartilhar esse dado com outro componente
+
   title = 'y';
 }
