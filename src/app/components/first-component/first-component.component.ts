@@ -9,11 +9,11 @@ export class FirstComponentComponent {
 
   name: string = "Felipe";
   age: number = 23;
-  job = "Programador"; //qunado a variavel nao esta tipada ela automaticamente é String
+  job = "Programador"; //quanngdo a variavel nao esta tipada ela automaticamente é String
   hobbies = ['Airsoft', 'Jogar', 'Ler']
   car = {
     name: 'Nissan',
     year: 2017,
   };
-
+  
 }
