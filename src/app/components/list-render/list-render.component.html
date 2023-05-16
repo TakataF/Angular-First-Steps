@@ -12,10 +12,11 @@
     <h2>Loja:</h2>
     <ul>
         <li *ngFor="let console of consoles">
-            Nome: {{console.name}} - Tipo: {{console.type}} - Marca: {{console.brand}} - Valor: {{console.value}}
-            
+            Nome: {{console.name}} - Tipo: {{console.type}} - Marca: {{console.brand}}
+            <button (click)="showValue(console)">Show Value</button>   
         </li>
     </ul>
+    <h3>{{ valueDetails }}</h3>
 
     
 </div>
