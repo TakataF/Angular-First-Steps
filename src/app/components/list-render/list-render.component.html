@@ -4,6 +4,7 @@
         <li *ngFor="let animal of animals">
             Nome: {{animal.name}} e o Tipo é: {{animal.type}}
             <button (click)="showAge(animal)">Show Age</button>
+            <button (click)="removeAnimal(animal)">Excluir</button>
         </li>
     </ul>
     <h3>{{ animalDetails }}</h3>
@@ -13,10 +14,8 @@
     <ul>
         <li *ngFor="let console of consoles">
             Nome: {{console.name}} - Tipo: {{console.type}} - Marca: {{console.brand}}
-            <button (click)="showValue(console)">Show Value</button>   
+            <button (click)="showValue(console)">Show Value</button>
         </li>
     </ul>
-    <h3>{{ valueDetails }}</h3>
-
-    
+    <h3>{{ valueDetails }}</h3> 
 </div>

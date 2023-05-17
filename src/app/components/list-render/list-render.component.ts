@@ -4,6 +4,8 @@ import { Animal } from 'src/app/Interfaces';
 
 import { Console } from 'src/app/Interfaces';
 
+import { ListService } from 'src/app/services/list.service';
+
 @Component({
   selector: 'app-list-render',
   templateUrl: './list-render.component.html',
@@ -40,5 +42,14 @@ showAge(animal: Animal): void{
 showValue(console: Console): void{
   this.valueDetails = `Console: ${console.name} o tipo do console é: ${console.type} a marca dele é: ${console.brand} e o valor dele é: ${console.value}`
 };
+
+constructor(private listService: ListService){
+
+}
+
+removeAnimal(animal: Animal){
+  console.log('Removendo animal...')
+  this.animals = this.listService.remove(this.animals, animal);
+}
 
 }
