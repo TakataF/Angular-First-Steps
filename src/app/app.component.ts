@@ -9,7 +9,7 @@ export class AppComponent {
   userName = "Joaquim";//irei compartilhar esse dado com outro componente
   userData = {
     email: "joaquim@gmail.com",
-    role: "admin"
+    role: "admin",
   }
 
   title = 'y';

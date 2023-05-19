@@ -1,3 +1,10 @@
 p{
     padding: 50px;
 }
+
+nav a{
+    padding: 25px;
+    color: gold;
+    text-decoration: none;
+
+}
