@@ -2,7 +2,7 @@
     <h2>Animais:</h2>
     <ul>
         <li *ngFor="let animal of animals">
-            Nome: {{animal.name}} e o Tipo é: {{animal.type}}
+            Nome: <a routerLink="/list/{{ animal.id }}">{{animal.name}}</a>  e o Tipo é: {{animal.type}}
             <button (click)="showAge(animal)">Show Age</button>
             <button (click)="removeAnimal(animal)">Excluir</button>
         </li>
@@ -12,9 +12,9 @@
 <div class="class">
     <h2>Loja:</h2>
     <ul>
-        <li *ngFor="let console of consoles">
-            Nome: {{console.name}} - Tipo: {{console.type}} - Marca: {{console.brand}}
-            <button (click)="showValue(console)">Show Value</button>
+        <li *ngFor="let game of games">
+            Nome: <a routerLink="/list/{{ game.id }}">{{game.name}}</a> - Tipo: {{game.type}} - Marca: {{game.brand}}
+            <button (click)="showValue(game)">Show Value</button>
         </li>
     </ul>
     <h3>{{ valueDetails }}</h3> 

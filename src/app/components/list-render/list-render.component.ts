@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Animal } from 'src/app/Interfaces';
 
-import { Console } from 'src/app/Interfaces';
+import { Game } from 'src/app/Interfaces';
 
 import { ListService } from 'src/app/services/list.service';
 
@@ -12,44 +12,39 @@ import { ListService } from 'src/app/services/list.service';
   styleUrls: ['./list-render.component.css']
 })
 export class ListRenderComponent {
-  animals: Animal[] = [
-    {name: "Turca", type: "Dog", age: 4},
-    {name: "tom",  type: "Cat", age: 10}, 
-    {name: "Frida", type: "Dog", age: 5},
-    {name: "Bob", type: "Horse", age: 1},
-  ];
+  animals: Animal[] = [];
 
-  consoles: Console[] =[
-    {name: "playstation5", type: "Console", brand: "Sony", value: 5500},
-    {name: "XboxOne", type: "Console", brand: "Microsoft", value: 4000},
-    {name: "PC", type: "Computer", brand: "Any", value: 13500},
-  ];
+  games: Game[] =[];
 
   valueDetails ='';
 
   animalDetails ='';
 
-animal = {
-  name: "teste",
-  type: "alguma coisa",
-  age: 15,
-};
 
 showAge(animal: Animal): void{
   this.animalDetails = `o pet ${animal.name} tem ${animal.age} anos!`
 };
 
-showValue(console: Console): void{
-  this.valueDetails = `Console: ${console.name} o tipo do console é: ${console.type} a marca dele é: ${console.brand} e o valor dele é: ${console.value}`
+showValue(games: Game): void{
+  this.valueDetails = `Console: ${games.name} o tipo do console é: ${games.type} a marca dele é: ${games.brand} e o valor dele é: ${games.value}`
 };
 
 constructor(private listService: ListService){
-
+  this.getAnimals()
+  this.getGame()
 }
 
 removeAnimal(animal: Animal){
   console.log('Removendo animal...')
   this.animals = this.listService.remove(this.animals, animal);
+}
+
+getAnimals(): void{
+  this.listService.getAllAnimal().subscribe((animals) => (this.animals = animals));
+}
+
+getGame(): void{
+  this.listService.getAllGame().subscribe((games) => (this.games = games));
 }
 
 }
